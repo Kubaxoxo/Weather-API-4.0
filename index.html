@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css">
+    <title>Weather App 4.0</title>
+</head>
+
+<body style="background-image: url(./image/tlo.jpg);" onload="zegarek()">
+    
+    <div class="container">
+        <div class="current-info">
+            <div class="date-display">
+                <div class="time" id="time">00.00</div>
+            </div>
+            <div class="wet-circle">
+                <img class="wet-img" src="./image/img-weather.png">
+            </div>
+            <div class="top">
+                <div class="top-left">
+                    <a class="actual-temp" id="actual-temp">30 C</a>
+                    <div class="break-actual"></div>
+                    <div class="city">SKAWINA</div>
+                    <div class="break-actual2"></div>
+                    <div class="humid-actual"></div>
+                    <button class="more-button" data-augmented-ui="tl-clip tr-round br-clip bl-round border" style="--aug-border-bg: #97E2DD; --aug-border-all: 1px;"><a id="advanced" href="http://bms.polcom/pogoda-pdc/index.htm" target="_blank">ADVANCED</a></button>
+                </div>
+            </div>
+            <div class="break" data-augmented-ui="bl-clip tr-clip border" style="--aug-border-bg: #02C8CD;"></div>
+        </div>
+        <div class="bottom">
+            <div class="date-container">
+                <div class="time" id="time" style="display: none;">
+                    12:30 <span id="am-pm">PM</span>
+                </div>
+                <div class="date" id="date">
+                    Monday, 25 May
+                </div>
+                <div class="others" id="current-weather-items">       
+                </div>
+            </div>
+            <div class="place-container">
+                <div class="time-zone" id="time-zone" style="display:none;">Asia/Kolkata</div>
+                <div id="country" class="country" style="display: none;">IN</div>
+            </div>
+            <div class="future-forecast">
+                <div class="today" id="actual-temp">
+                </div>
+                <div class="weather-forecast" id="weather-forecast">
+                </div>
+            </div>
+        </div> 
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./script/api.js"></script>
+    <script src="./script/current.js"></script>
+    <script src="./script/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+</body>
+</html>
