@@ -1,8 +1,6 @@
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
 const currentWeatherItemsEl = document.getElementById('current-weather-items');
-const timezone = document.getElementById('time-zone');
-const countryEl = document.getElementById('country');
 const weatherForecastEl = document.getElementById('weather-forecast');
 const currentTempEl = document.getElementById('current-temp');
 
@@ -25,24 +23,18 @@ setInterval(() => {
 
 getWeatherData()
 function getWeatherData () {
-    navigator.geolocation.getCurrentPosition((success) => {
-        
-        
-
-        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=49.930375&lon=19.944466&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
+    
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=49.975011368853494&lon=19.830714213251536&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
 
         console.log(data)
         showWeatherData(data);
         })
 
-    })
-}
+    }
 
 function showWeatherData (data){
     let {humidity, pressure, sunrise, sunset, wind_speed, clouds, visibility, uvi} = data.current;
-    timezone.innerHTML = data.timezone;
-    countryEl.innerHTML = data.lat + 'N ' + data.lon+'E'
-
+    
     currentWeatherItemsEl.innerHTML = 
     `
     <div class="top-right">
